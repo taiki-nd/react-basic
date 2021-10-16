@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 const App = () => {
+  const [num, setNum] = useState(0);
+  const [japanShowFlag, setjapanShowFlag] = useState(true);
+
   const onClickCounUp = () => {
     setNum(num + 1);
   };
-  const [num, setNum] = useState(0);
+
+  const onClickShowFlag = () => {
+    setjapanShowFlag(!japanShowFlag);
+  };
+
   return (
     <>
       <h1 style={{ color: "red" }}>こんにちは！</h1>
@@ -13,6 +20,8 @@ const App = () => {
       <ColorfulMessage color="pink">元気です</ColorfulMessage>
       <button onClick={onClickCounUp}>カウントアップ</button>
       <p>{num}</p>
+      <button onClick={onClickShowFlag}>on/off</button>
+      {japanShowFlag && <p>🇯🇵</p>}
     </>
   );
 };
