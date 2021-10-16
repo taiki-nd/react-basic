@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 const App = () => {
+  console.log("最初");
   const [num, setNum] = useState(0);
   const [japanShowFlag, setjapanShowFlag] = useState(true);
 
@@ -13,11 +14,13 @@ const App = () => {
     setjapanShowFlag(!japanShowFlag);
   };
 
-  if (num % 3 === 0) {
-    japanShowFlag || setjapanShowFlag(true);
-  } else {
-    japanShowFlag && setjapanShowFlag(false);
-  }
+  useEffect(() => {
+    if (num % 3 === 0) {
+      japanShowFlag || setjapanShowFlag(true);
+    } else {
+      japanShowFlag && setjapanShowFlag(false);
+    }
+  }, [num]);
 
   return (
     <>
