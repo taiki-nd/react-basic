@@ -14,9 +14,9 @@ const App = () => {
   };
 
   if (num % 3 === 0) {
-    setjapanShowFlag(true);
+    japanShowFlag || setjapanShowFlag(true);
   } else {
-    setjapanShowFlag(false);
+    japanShowFlag && setjapanShowFlag(false);
   }
 
   return (
