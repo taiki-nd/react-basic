@@ -13,6 +13,12 @@ const App = () => {
     setjapanShowFlag(!japanShowFlag);
   };
 
+  if (num % 3 === 0) {
+    setjapanShowFlag(true);
+  } else {
+    setjapanShowFlag(false);
+  }
+
   return (
     <>
       <h1 style={{ color: "red" }}>こんにちは！</h1>
