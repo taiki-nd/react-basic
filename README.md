@@ -1,2 +1,3 @@
 # react-basic
-Created with CodeSandbox
+
+react の基礎についてのリポジトリ
